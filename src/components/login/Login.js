@@ -34,10 +34,8 @@ function Login() {
             // dispatch(updateUser({ data }))
         }
         else if (error) {
-            // if (!toast.isActive(toastId.current)) {
-            //     toastId.current = toast.error(error.response.data.error, Toastobjects);
-            // }
-            console.log(error)
+            
+            alert(error)
         }
 
         if(localStorage.getItem("users")){

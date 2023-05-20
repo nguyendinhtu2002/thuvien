@@ -21,3 +21,4 @@ export const editBook = async(id,data)=>{
     const response = await axios.put(`${URL}/api/v1/book/update/${id}`,data)
     return response.data
 }
+

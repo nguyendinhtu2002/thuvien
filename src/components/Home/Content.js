@@ -50,7 +50,16 @@ function Content() {
                                                         <button className='px-3 py-2 bg-green-600 mr-2'>View</button>
 
                                                     </Link>
-                                                    <button className='px-3 py-2 bg-green-600'>edit</button>
+                                                    <Link to={
+                                                        {
+                                                            pathname: "/View",
+                                                            search: `?id=${item._id}`,
+                                                        }
+                                                    }>
+                                                    <button className='px-3 py-2 bg-green-600 '>edit</button>
+
+                                                    </Link>
+                                                   
                                                 </td>
 
                                             </tr>

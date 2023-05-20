@@ -189,7 +189,7 @@ function View() {
                     <>
                         <button
                             onClick={() => setIsEditing(true)}
-                            class="px-4 py-2 text-white bg-red-500 rounded shadow-xl" >
+                            class="px-4 py-2 text-white bg-red-500 rounded shadow-xl mr-2" >
                             Edit
                         </button>
                         <Link to="/Add">
@@ -201,6 +201,11 @@ function View() {
                 {isEditing && (
                     <>
                         <button class="px-4 py-2 text-white bg-green-500 rounded shadow-xl" onClick={handleUpdate}>Save</button>
+
+                        <Link to="/">
+                            <button class="px-4 py-2 text-white bg-green-500 rounded shadow-xl">quay lai</button>
+
+                        </Link>
                     </>
                 )}
             </div>

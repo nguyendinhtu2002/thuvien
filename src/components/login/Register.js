@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useMutationHooks } from '../../hook/useMutationHooks';
 import * as UserService from "../../Service/UserService"
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
     const [username, setUserName] = useState("")
@@ -8,6 +9,7 @@ function Register() {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [email, setEmail] = useState("")
+    const history = useNavigate();
 
     const mutation = useMutationHooks(
         data => UserService.registerUser(data)
@@ -26,7 +28,18 @@ function Register() {
                 email
             }
         )
+
     };
+
+    useEffect(() => {
+        if (error === null && isSuccess) {
+
+
+            history("/Login")
+
+            // dispatch(updateUser({ data }))
+        }
+    }, [error, isSuccess])
     return (
         <div>
             <div className='flex flex-col max-w-full my-auto mx-0 w-full min-w-[320px]'>
