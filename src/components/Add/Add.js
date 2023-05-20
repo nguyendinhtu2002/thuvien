@@ -28,6 +28,7 @@ function Add() {
             // if (!toast.isActive(toastId.current)) {
             //     toastId.current = toast.error("Không được để trống!", Toastobjects);
             // }
+            console.log("Co loi")
         }
         else {
             mutationAddOrder.mutate(
@@ -53,16 +54,16 @@ function Add() {
                         <div className='grid grid-cols-2'>
                             <div>
                                 <div>Tiêu đề </div>
-                                <input className='border border-black'></input>
+                                <input className='border border-black' onChange={(e) => setTitle(e.target.value)}></input>
                             </div>
                             <div>
                                 <div>Tác giả  </div>
-                                <input className='border border-black'></input>
+                                <input className='border border-black' onChange={(e) => setAuther(e.target.value)}></input>
                             </div>
                         </div>
                         <div className='pr-52'>
                             <div>Mô tả về sách</div>
-                            <textarea className='border border-black w-full h-32' />
+                            <textarea className='border border-black w-full h-32' onChange={(e) => setDes(e.target.value)} />
                         </div>
                         <div className='grid grid-cols-2'>
                             <div>
@@ -75,20 +76,24 @@ function Add() {
                                         type="text"
                                         // value={moment(data.releaseDate).format(format1)}
                                         class="peer block min-h-[auto] rounded border-1  px-3 py-[0.32rem] leading-[1.6] outline-1 transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        placeholder="Select a date" />
+                                        placeholder="Select a date"
+                                        onChange={(e) => setReleaseDate(e.target.value)}
+                                    />
 
 
                                 </div>
                             </div>
                             <div>
                                 <div>Số trang </div>
-                                <input className='border border-black'></input>
+                                <input className='border border-black'
+                                
+                                onChange={(e)=>setCount(e.target.value)}></input>
                             </div>
                         </div>
                         <div>
                             <div>Thể loại</div>
                             <div>
-                                <select className='w-32' >
+                                <select className='w-32'onChange={(e)=>setType(e.target.value)} >
                                     {<option value="Toán học" selected>Toán Học</option>}
                                     {<option value="Văn học" selected>Văn học</option>}
                                     {<option value="Sử học" selected>Sử học</option>}

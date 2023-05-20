@@ -21,6 +21,10 @@ function App() {
             <Route path='/Edit' element={<Edit />} />
             <Route path="/Add" element={<Add />} />
           </Route>
+          <Route path='/Register' element={<Register />} />
+
+          {/* </Route> */}
+
 
         </Routes>
       </BrowserRouter>

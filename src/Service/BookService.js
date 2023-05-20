@@ -13,6 +13,11 @@ export const getDetails = async(id)=>{
 }
 
 export const addBook = async(data)=>{
-    const response = await axios.get(`${URL}/api/v1/book/addBook`,data)
+    const response = await axios.post(`${URL}/api/v1/book/addBook`,data)
+    return response.data
+}
+
+export const editBook = async(id,data)=>{
+    const response = await axios.put(`${URL}/api/v1/book/update/${id}`,data)
     return response.data
 }
