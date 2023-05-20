@@ -5,3 +5,9 @@ export const loginUser = async (data) => {
     
     return res.data
 }
+
+export const registerUser = async (data) => {
+    const res = await axios.post(`${URL}/api/v1/user/register`, data)
+    
+    return res.data
+}
