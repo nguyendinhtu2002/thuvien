@@ -7,6 +7,7 @@ import Register from "./components/login/Register";
 import View from "./components/Detail/View";
 import Edit from "./components/Detail/Edit";
 import PrivateRoutes from "./PrivateRouter";
+import Add from "./components/Add/Add";
 function App() {
   return (
     <div>
@@ -18,7 +19,7 @@ function App() {
           <Route element={<PrivateRoutes />}>
             <Route path='/View' element={<View />} />
             <Route path='/Edit' element={<Edit />} />
-
+            <Route path="/Add" element={<Add />} />
           </Route>
 
         </Routes>

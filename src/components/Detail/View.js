@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import * as BookService from "../../Service/BookService"
 import { useMutationHooks } from '../../hook/useMutationHooks'
+import moment from "moment"
 
 function View() {
     const [data, setData] = useState([])
     const location = useLocation()
+    const format1 = "YYYY-MM-DD"
 
     const id = location.search.split('?id=')[1]
 
@@ -26,7 +28,7 @@ function View() {
     return (
         <div>
             <div className='flex justify-center mt-5 mb-5 text-2xl'>
-                Sách tiếng Việt Lớp 1
+                Sách {data.title}
             </div>
             <div className='grid grid-cols-5 gap-10 mx-20 bg-gray-500 px-12 pb-12 '>
                 <div className='col-span-3'>
@@ -53,13 +55,11 @@ function View() {
                                 data-te-input-wrapper-init>
                                 <input
                                     type="text"
+                                    value={moment(data.releaseDate).format(format1)}
                                     class="peer block min-h-[auto] rounded border-1  px-3 py-[0.32rem] leading-[1.6] outline-1 transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                     placeholder="Select a date" />
-                                <label
-                                    for="floatingInput"
-                                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                                >Select a date</label
-                                >
+
+
                             </div>
                         </div>
                         <div>
